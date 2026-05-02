@@ -19,10 +19,10 @@ export const heroSnackMinis = [
     photoAlt: "Glossy orange jalebi spirals on a brass plate",
   },
   {
-    name: "Ongole Mysore Pak",
+    name: "Nellore Malai Kaja",
     region: "Andhra Pradesh",
-    photo: "/products/ongole-mysore-pak.png",
-    photoAlt: "Stacked cubes of golden Mysore pak on a gold plate",
+    photo: "/products/nellore-malai-kaja.png",
+    photoAlt: "Dark glossy Nellore malai kaja pieces on a leaf-lined plate",
   },
   {
     name: "Gangaraju Kova",
@@ -68,12 +68,12 @@ export const featuredProducts = [
     photoAlt: "Glossy orange jalebi spirals on a brass plate",
   },
   {
-    title: "Ongole Mysore Pak",
-    subtitle: "Melting gram flour, ghee, and sugar—crumbly, festive, unforgettable",
+    title: "Nellore Malai Kaja",
+    subtitle: "Soft, syrup-soaked layered kaja with deep caramelized richness",
     price: "₹259",
     region: "Andhra Pradesh",
     tag: "Festive",
-    photo: "/products/ongole-mysore-pak.png",
-    photoAlt: "Stacked cubes of golden Mysore pak on a gold plate",
+    photo: "/products/nellore-malai-kaja.png",
+    photoAlt: "Dark glossy Nellore malai kaja pieces on a leaf-lined plate",
   },
 ] as const;
