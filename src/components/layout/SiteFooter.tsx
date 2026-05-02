@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
 
 const footerShop = [
   { label: "All snacks", to: "/#shop" },
@@ -40,7 +42,7 @@ export function SiteFooter() {
               {footerShop.map((l) => (
                 <li key={l.label}>
                   <Link
-                    to={l.to}
+                    href={l.to}
                     className="-mx-1 inline-flex min-h-11 items-center rounded-md px-1 text-[15px] text-namkeenly-navy/65 transition-colors hover:text-namkeenly-navy sm:min-h-0 sm:text-sm"
                   >
                     {l.label}
@@ -57,7 +59,7 @@ export function SiteFooter() {
               {footerCo.map((l) => (
                 <li key={l.label}>
                   <Link
-                    to={l.to}
+                    href={l.to}
                     className="-mx-1 inline-flex min-h-11 items-center rounded-md px-1 text-[15px] text-namkeenly-navy/65 transition-colors hover:text-namkeenly-navy sm:min-h-0 sm:text-sm"
                   >
                     {l.label}

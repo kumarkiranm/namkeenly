@@ -1,5 +1,7 @@
+"use client";
+
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Button } from "@/components/namkeenly";
 import { cn } from "@/lib/cn";
 
@@ -44,7 +46,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-namkeenly-navy/[0.05] bg-gradient-to-r from-white/92 via-namkeenly-cream/95 to-namkeenly-wheat/35 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:gap-4 sm:px-6 sm:py-4">
-        <Link to="/" className="group min-w-0 shrink-0 text-left">
+        <Link href="/" className="group min-w-0 shrink-0 text-left">
           <img
             src="/logo-horizontal.png"
             alt="Namkeenly"
@@ -62,7 +64,7 @@ export function SiteHeader() {
           {nav.map((item) => (
             <Link
               key={item.to}
-              to={item.to}
+              href={item.to}
               className="text-sm font-medium text-namkeenly-navy/70 transition-colors hover:text-namkeenly-navy"
             >
               {item.label}
@@ -74,7 +76,7 @@ export function SiteHeader() {
           <Button variant="ghost" className="!px-4">
             Sign in
           </Button>
-          <Link to="/#shop" className={primaryNavCtaClass}>
+          <Link href="/#shop" className={primaryNavCtaClass}>
             Browse shop
           </Link>
         </div>
@@ -105,7 +107,7 @@ export function SiteHeader() {
           {nav.map((item) => (
             <Link
               key={item.to}
-              to={item.to}
+              href={item.to}
               className="flex min-h-12 items-center rounded-xl px-3 py-3 text-base font-medium text-namkeenly-navy/80 active:bg-white/50"
               onClick={() => setOpen(false)}
             >
@@ -117,7 +119,7 @@ export function SiteHeader() {
               Sign in
             </Button>
             <Link
-              to="/#shop"
+              href="/#shop"
               className={primaryNavCtaClass + " w-full justify-center"}
               onClick={() => setOpen(false)}
             >

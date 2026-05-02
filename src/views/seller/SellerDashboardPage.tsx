@@ -1,5 +1,7 @@
+"use client";
+
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import {
   AnalyticsPanel,
   OrdersTable,
@@ -21,7 +23,7 @@ export function SellerDashboardPage() {
         <div className="mx-auto flex h-14 max-w-[1600px] items-center justify-between px-4 sm:h-16 sm:px-6 lg:px-10">
           <div className="flex items-center gap-4">
             <Link
-              to="/"
+              href="/"
               className="-m-2 inline-flex min-h-11 items-center rounded-lg p-2 text-[13px] font-medium tracking-wide text-namkeenly-navy/50 transition-colors hover:text-namkeenly-navy sm:min-h-0"
             >
               ← Storefront

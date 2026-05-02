@@ -1,18 +1,6 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Button, SnackProductCard } from "@/components/namkeenly";
 import { featuredProducts } from "@/data/homeProducts";
-
-function ProductPhoto({ src, alt }: { src: string; alt: string }) {
-  return (
-    <img
-      src={src}
-      alt={alt}
-      className="h-full w-full object-cover"
-      loading="lazy"
-      decoding="async"
-    />
-  );
-}
 
 export function FeaturedProducts() {
   return (
@@ -35,7 +23,7 @@ export function FeaturedProducts() {
               View all categories
             </Button>
             <Link
-              to="/product/kerala-black-pepper-banana-chips"
+              href="/product/kerala-black-pepper-banana-chips"
               className="inline-flex min-h-11 touch-manipulation items-center text-sm font-semibold text-namkeenly-accent underline-offset-4 transition-colors duration-300 ease-premium hover:text-namkeenly-navy hover:underline sm:min-h-0 sm:justify-end"
             >
               View sample product page →
@@ -52,7 +40,8 @@ export function FeaturedProducts() {
               tag={p.tag}
               description={p.subtitle}
               price={p.price}
-              image={<ProductPhoto src={p.photo} alt={p.photoAlt} />}
+              imageSrc={p.photo}
+              imageAlt={p.photoAlt}
             />
           ))}
         </div>

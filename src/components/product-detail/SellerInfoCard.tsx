@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import type { SellerInfo } from "@/types/productDetail";
 import { Button } from "@/components/namkeenly";
 import { cn } from "@/lib/cn";
@@ -46,7 +46,7 @@ export function SellerInfoCard({ seller, className }: SellerInfoCardProps) {
       <p className="mt-5 text-sm leading-relaxed text-namkeenly-navy/65">{seller.bio}</p>
       {seller.shopHref ? (
         seller.shopHref.startsWith("/") ? (
-          <Link to={seller.shopHref} className={cn(secondaryCtaClass, "mt-6")}>
+          <Link href={seller.shopHref} className={cn(secondaryCtaClass, "mt-6")}>
             Visit shop
           </Link>
         ) : (

@@ -1,3 +1,5 @@
+"use client";
+
 import type { HTMLAttributes, ReactNode } from "react";
 import { useState } from "react";
 import { cn } from "@/lib/cn";
@@ -37,7 +39,10 @@ export interface SnackProductCardProps extends Omit<HTMLAttributes<HTMLElement>,
   /** Optional highlight (e.g. “Bestseller”) */
   tag?: string;
   price: string;
-  /** Custom media; if omitted, a gradient placeholder is used */
+  /** Product photo URL (serializable; use from Server Components instead of `image`) */
+  imageSrc?: string;
+  imageAlt?: string;
+  /** Custom media (only pass from Client Components; not serializable from Server) */
   image?: ReactNode;
   /** Label inside the default placeholder when `image` is not provided */
   imageLabel?: string;
@@ -56,6 +61,8 @@ export function SnackProductCard({
   description,
   tag,
   price,
+  imageSrc,
+  imageAlt,
   image,
   imageLabel = "Snack",
   onAddToCart,
@@ -77,7 +84,18 @@ export function SnackProductCard({
     onWishlistChange?.(next);
   };
 
-  const media = image ?? <PlaceholderImg label={imageLabel} />;
+  const media =
+    imageSrc && imageAlt ? (
+      <img
+        src={imageSrc}
+        alt={imageAlt}
+        className="h-full w-full object-cover"
+        loading="lazy"
+        decoding="async"
+      />
+    ) : (
+      image ?? <PlaceholderImg label={imageLabel} />
+    );
 
   return (
     <article
@@ -142,7 +160,7 @@ export function SnackProductCard({
             type="button"
             variant="primary"
             className="w-full shrink-0 px-6 py-3 sm:w-auto sm:min-w-[9.5rem] sm:py-2.5"
-            onClick={onAddToCart}
+            {...(onAddToCart ? { onClick: onAddToCart } : {})}
           >
             {addToCartLabel}
           </Button>

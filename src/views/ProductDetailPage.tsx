@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Badge, Button } from "@/components/namkeenly";
 import { PlaceholderImg } from "@/components/shared/PlaceholderImg";
 import { SiteFooter, SiteHeader } from "@/components/layout";
@@ -50,7 +50,7 @@ export function ProductDetailPage({ product = sampleProductDetail }: ProductDeta
             <nav className="text-[13px] text-namkeenly-navy/55 sm:text-sm" aria-label="Breadcrumb">
               <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
                 <li>
-                  <Link to="/" className="transition-colors hover:text-namkeenly-navy">
+                  <Link href="/" className="transition-colors hover:text-namkeenly-navy">
                     Home
                   </Link>
                 </li>
@@ -58,7 +58,7 @@ export function ProductDetailPage({ product = sampleProductDetail }: ProductDeta
                   /
                 </li>
                 <li>
-                  <Link to="/#shop" className="transition-colors hover:text-namkeenly-navy">
+                  <Link href="/#shop" className="transition-colors hover:text-namkeenly-navy">
                     Shop
                   </Link>
                 </li>
@@ -168,7 +168,7 @@ export function ProductDetailPage({ product = sampleProductDetail }: ProductDeta
 
           <div className="mt-10 flex justify-center px-2 sm:mt-14 lg:mt-16">
             <Link
-              to="/"
+              href="/"
               className="inline-flex min-h-11 w-full max-w-sm touch-manipulation items-center justify-center gap-2 rounded-xl border border-namkeenly-sage/50 bg-white px-5 py-3 text-sm font-semibold tracking-wide text-namkeenly-navy shadow-namkeenly-sm transition-[transform,box-shadow,colors] duration-300 ease-premium hover:border-namkeenly-sage hover:bg-namkeenly-sage/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-namkeenly-sage/40 focus-visible:ring-offset-2 focus-visible:ring-offset-namkeenly-cream motion-safe:hover:-translate-y-px motion-safe:hover:shadow-namkeenly sm:min-h-0 sm:w-auto sm:max-w-none sm:py-2.5"
             >
               ← Back to shop

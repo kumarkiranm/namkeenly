@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+module.exports = {
+  content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
@@ -9,17 +9,14 @@ export default {
           accent: "#FFA500",
           cream: "#F7F4EE",
           sage: "#A8C5A1",
-          /** Warm clay / terracotta whisper */
           clay: "#C9A88E",
-          /** Soft wheat paper */
           wheat: "#EDE6DB",
-          /** Earthy ochre accent (use at low opacity) */
           ochre: "#B8956C",
         },
       },
       fontFamily: {
-        display: ["Playfair Display", "Georgia", "serif"],
-        sans: ["Inter", "system-ui", "sans-serif"],
+        display: ["var(--font-playfair)", "Georgia", "serif"],
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
       },
       boxShadow: {
         "namkeenly-sm": "0 1px 2px 0 rgb(31 41 55 / 0.06)",
